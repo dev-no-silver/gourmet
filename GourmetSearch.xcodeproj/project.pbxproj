@@ -8,20 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		8E2625B31FCDBD4C0041010B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2625B21FCDBD4C0041010B /* AppDelegate.swift */; };
-		8E2625B51FCDBD4C0041010B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2625B41FCDBD4C0041010B /* ViewController.swift */; };
+		8E2625B51FCDBD4C0041010B /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2625B41FCDBD4C0041010B /* ShopListViewController.swift */; };
 		8E2625B81FCDBD4C0041010B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E2625B61FCDBD4C0041010B /* Main.storyboard */; };
 		8E2625BA1FCDBD4C0041010B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E2625B91FCDBD4C0041010B /* Assets.xcassets */; };
 		8E2625BD1FCDBD4C0041010B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E2625BB1FCDBD4C0041010B /* LaunchScreen.storyboard */; };
+		8E8AE85F1FE65A6B0015D415 /* SearchTopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AE85E1FE65A6B0015D415 /* SearchTopTableViewController.swift */; };
+		8E8AE8611FE65D1E0015D415 /* FreewordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AE8601FE65D1E0015D415 /* FreewordTableViewCell.swift */; };
+		8E8AE8631FEEC1E20015D415 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AE8621FEEC1E20015D415 /* ShopDetailViewController.swift */; };
+		8E8AE8651FEF65250015D415 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AE8641FEF65250015D415 /* Favorite.swift */; };
+		8E8AE8691FEFAB900015D415 /* SearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AE8681FEFAB900015D415 /* SearchNavigationController.swift */; };
+		8E8AE86B1FEFABA60015D415 /* FavoriteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AE86A1FEFABA60015D415 /* FavoriteNavigationController.swift */; };
+		8E8AE86D1FEFFBD30015D415 /* ShopMapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AE86C1FEFFBD30015D415 /* ShopMapDetailViewController.swift */; };
+		8EAB4F901FDBCBB200419111 /* ShopListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB4F8F1FDBCBB200419111 /* ShopListItemTableViewCell.swift */; };
+		8EBA6C6B1FDC365E00D516AE /* YahooLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBA6C6A1FDC365E00D516AE /* YahooLocal.swift */; };
+		988E3EF365B7EBDE2B2A0597 /* Pods_GourmetSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1EB62526EB1E72665239E6 /* Pods_GourmetSearch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D84AE17E0D255D5F1F57590 /* Pods-GourmetSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-GourmetSearch/Pods-GourmetSearch.release.xcconfig"; sourceTree = "<group>"; };
 		8E2625AF1FCDBD4C0041010B /* GourmetSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E2625B21FCDBD4C0041010B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8E2625B41FCDBD4C0041010B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8E2625B41FCDBD4C0041010B /* ShopListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewController.swift; sourceTree = "<group>"; };
 		8E2625B71FCDBD4C0041010B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8E2625B91FCDBD4C0041010B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E2625BC1FCDBD4C0041010B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E2625BE1FCDBD4C0041010B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E8AE85E1FE65A6B0015D415 /* SearchTopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTopTableViewController.swift; sourceTree = "<group>"; };
+		8E8AE8601FE65D1E0015D415 /* FreewordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreewordTableViewCell.swift; sourceTree = "<group>"; };
+		8E8AE8621FEEC1E20015D415 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
+		8E8AE8641FEF65250015D415 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		8E8AE8681FEFAB900015D415 /* SearchNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationController.swift; sourceTree = "<group>"; };
+		8E8AE86A1FEFABA60015D415 /* FavoriteNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationController.swift; sourceTree = "<group>"; };
+		8E8AE86C1FEFFBD30015D415 /* ShopMapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopMapDetailViewController.swift; sourceTree = "<group>"; };
+		8EAB4F8A1FCDC2E200419111 /* GourmetSearch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GourmetSearch-Bridging-Header.h"; sourceTree = "<group>"; };
+		8EAB4F8E1FCDC78D00419111 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8EAB4F8F1FDBCBB200419111 /* ShopListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListItemTableViewCell.swift; sourceTree = "<group>"; };
+		8EBA6C6A1FDC365E00D516AE /* YahooLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YahooLocal.swift; sourceTree = "<group>"; };
+		E04380438C7BE10B0C975B15 /* Pods-GourmetSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GourmetSearch/Pods-GourmetSearch.debug.xcconfig"; sourceTree = "<group>"; };
+		EE1EB62526EB1E72665239E6 /* Pods_GourmetSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,16 +53,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				988E3EF365B7EBDE2B2A0597 /* Pods_GourmetSearch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C7DE9182284D945832293E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE1EB62526EB1E72665239E6 /* Pods_GourmetSearch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8E2625A61FCDBD4C0041010B = {
 			isa = PBXGroup;
 			children = (
+				3C7DE9182284D945832293E9 /* Frameworks */,
 				8E2625B11FCDBD4C0041010B /* GourmetSearch */,
+				8EAB4F8A1FCDC2E200419111 /* GourmetSearch-Bridging-Header.h */,
+				C86956445B22FB16DA5F5F87 /* Pods */,
 				8E2625B01FCDBD4C0041010B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,14 +90,56 @@
 		8E2625B11FCDBD4C0041010B /* GourmetSearch */ = {
 			isa = PBXGroup;
 			children = (
+				8E8AE8671FEFAB780015D415 /* Tabs */,
+				8EBA6C691FDC354600D516AE /* Common */,
 				8E2625B21FCDBD4C0041010B /* AppDelegate.swift */,
-				8E2625B41FCDBD4C0041010B /* ViewController.swift */,
-				8E2625B61FCDBD4C0041010B /* Main.storyboard */,
 				8E2625B91FCDBD4C0041010B /* Assets.xcassets */,
-				8E2625BB1FCDBD4C0041010B /* LaunchScreen.storyboard */,
 				8E2625BE1FCDBD4C0041010B /* Info.plist */,
+				8E2625BB1FCDBD4C0041010B /* LaunchScreen.storyboard */,
+				8E2625B61FCDBD4C0041010B /* Main.storyboard */,
+				8EAB4F911FDBCBCD00419111 /* ShopList */,
 			);
 			path = GourmetSearch;
+			sourceTree = "<group>";
+		};
+		8E8AE8671FEFAB780015D415 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				8E8AE8681FEFAB900015D415 /* SearchNavigationController.swift */,
+				8E8AE86A1FEFABA60015D415 /* FavoriteNavigationController.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		8EAB4F911FDBCBCD00419111 /* ShopList */ = {
+			isa = PBXGroup;
+			children = (
+				8EAB4F8F1FDBCBB200419111 /* ShopListItemTableViewCell.swift */,
+				8E2625B41FCDBD4C0041010B /* ShopListViewController.swift */,
+				8E8AE85E1FE65A6B0015D415 /* SearchTopTableViewController.swift */,
+				8E8AE8601FE65D1E0015D415 /* FreewordTableViewCell.swift */,
+				8E8AE8621FEEC1E20015D415 /* ShopDetailViewController.swift */,
+				8E8AE86C1FEFFBD30015D415 /* ShopMapDetailViewController.swift */,
+			);
+			path = ShopList;
+			sourceTree = "<group>";
+		};
+		8EBA6C691FDC354600D516AE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8EBA6C6A1FDC365E00D516AE /* YahooLocal.swift */,
+				8E8AE8641FEF65250015D415 /* Favorite.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C86956445B22FB16DA5F5F87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E04380438C7BE10B0C975B15 /* Pods-GourmetSearch.debug.xcconfig */,
+				1D84AE17E0D255D5F1F57590 /* Pods-GourmetSearch.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +149,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E2625C11FCDBD4C0041010B /* Build configuration list for PBXNativeTarget "GourmetSearch" */;
 			buildPhases = (
+				BE4369F5D64423448BCE9199 /* [CP] Check Pods Manifest.lock */,
 				8E2625AB1FCDBD4C0041010B /* Sources */,
 				8E2625AC1FCDBD4C0041010B /* Frameworks */,
 				8E2625AD1FCDBD4C0041010B /* Resources */,
+				6825CF89FEA12D506E5791B1 /* [CP] Embed Pods Frameworks */,
+				59D0399A13C8C731EB0CDDF6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +177,7 @@
 				TargetAttributes = {
 					8E2625AE1FCDBD4C0041010B = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -105,7 +187,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 8E2625A61FCDBD4C0041010B;
@@ -131,13 +212,80 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		59D0399A13C8C731EB0CDDF6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GourmetSearch/Pods-GourmetSearch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6825CF89FEA12D506E5791B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GourmetSearch/Pods-GourmetSearch-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GourmetSearch/Pods-GourmetSearch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE4369F5D64423448BCE9199 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GourmetSearch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8E2625AB1FCDBD4C0041010B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E2625B51FCDBD4C0041010B /* ViewController.swift in Sources */,
+				8E8AE86D1FEFFBD30015D415 /* ShopMapDetailViewController.swift in Sources */,
+				8EAB4F901FDBCBB200419111 /* ShopListItemTableViewCell.swift in Sources */,
+				8E8AE8651FEF65250015D415 /* Favorite.swift in Sources */,
+				8E2625B51FCDBD4C0041010B /* ShopListViewController.swift in Sources */,
+				8EBA6C6B1FDC365E00D516AE /* YahooLocal.swift in Sources */,
+				8E8AE8611FE65D1E0015D415 /* FreewordTableViewCell.swift in Sources */,
+				8E8AE8631FEEC1E20015D415 /* ShopDetailViewController.swift in Sources */,
 				8E2625B31FCDBD4C0041010B /* AppDelegate.swift in Sources */,
+				8E8AE86B1FEFABA60015D415 /* FavoriteNavigationController.swift in Sources */,
+				8E8AE85F1FE65A6B0015D415 /* SearchTopTableViewController.swift in Sources */,
+				8E8AE8691FEFAB900015D415 /* SearchNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +304,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8E2625BC1FCDBD4C0041010B /* Base */,
+				8EAB4F8E1FCDC78D00419111 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -167,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -211,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -224,6 +374,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -262,7 +413,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -272,14 +423,18 @@
 		};
 		8E2625C21FCDBD4C0041010B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E04380438C7BE10B0C975B15 /* Pods-GourmetSearch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L52SXEXWG3;
 				INFOPLIST_FILE = GourmetSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nosilver.GourmetSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GourmetSearch-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -287,14 +442,17 @@
 		};
 		8E2625C31FCDBD4C0041010B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D84AE17E0D255D5F1F57590 /* Pods-GourmetSearch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L52SXEXWG3;
 				INFOPLIST_FILE = GourmetSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nosilver.GourmetSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GourmetSearch-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
