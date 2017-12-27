@@ -19,6 +19,7 @@
 		8E8AE8691FEFAB900015D415 /* SearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AE8681FEFAB900015D415 /* SearchNavigationController.swift */; };
 		8E8AE86B1FEFABA60015D415 /* FavoriteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AE86A1FEFABA60015D415 /* FavoriteNavigationController.swift */; };
 		8E8AE86D1FEFFBD30015D415 /* ShopMapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AE86C1FEFFBD30015D415 /* ShopMapDetailViewController.swift */; };
+		8E8AE86F1FF3DD120015D415 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8AE86E1FF3DD120015D415 /* LocationService.swift */; };
 		8EAB4F901FDBCBB200419111 /* ShopListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB4F8F1FDBCBB200419111 /* ShopListItemTableViewCell.swift */; };
 		8EBA6C6B1FDC365E00D516AE /* YahooLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBA6C6A1FDC365E00D516AE /* YahooLocal.swift */; };
 		988E3EF365B7EBDE2B2A0597 /* Pods_GourmetSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1EB62526EB1E72665239E6 /* Pods_GourmetSearch.framework */; };
@@ -40,6 +41,7 @@
 		8E8AE8681FEFAB900015D415 /* SearchNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationController.swift; sourceTree = "<group>"; };
 		8E8AE86A1FEFABA60015D415 /* FavoriteNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationController.swift; sourceTree = "<group>"; };
 		8E8AE86C1FEFFBD30015D415 /* ShopMapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopMapDetailViewController.swift; sourceTree = "<group>"; };
+		8E8AE86E1FF3DD120015D415 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		8EAB4F8A1FCDC2E200419111 /* GourmetSearch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GourmetSearch-Bridging-Header.h"; sourceTree = "<group>"; };
 		8EAB4F8E1FCDC78D00419111 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8EAB4F8F1FDBCBB200419111 /* ShopListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				8EBA6C6A1FDC365E00D516AE /* YahooLocal.swift */,
 				8E8AE8641FEF65250015D415 /* Favorite.swift */,
+				8E8AE86E1FF3DD120015D415 /* LocationService.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				8E2625B31FCDBD4C0041010B /* AppDelegate.swift in Sources */,
 				8E8AE86B1FEFABA60015D415 /* FavoriteNavigationController.swift in Sources */,
 				8E8AE85F1FE65A6B0015D415 /* SearchTopTableViewController.swift in Sources */,
+				8E8AE86F1FF3DD120015D415 /* LocationService.swift in Sources */,
 				8E8AE8691FEFAB900015D415 /* SearchNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
