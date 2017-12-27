@@ -22,35 +22,35 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Freeword" id="aM7-x5-W1F" customClass="FreewordTableViewCell" customModule="GourmetSearch" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="Freeword" id="aM7-x5-W1F" customClass="FreewordTableViewCell" customModule="GourmetSearch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aM7-x5-W1F" id="TVQ-bu-jrp">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="フリーワード検索" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaC-Qb-sih">
-                                            <rect key="frame" x="32" y="11.5" width="140" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="フリーワード検索" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaC-Qb-sih">
+                                            <rect key="frame" x="16" y="11.5" width="140" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Uob-bw-ssn"/>
                                                 <constraint firstAttribute="width" constant="140" id="u1q-zG-5bI"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="検索" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bpf-ci-J26" userLabel="Text Field">
-                                            <rect key="frame" x="188" y="6" width="155" height="30"/>
+                                            <rect key="frame" x="172" y="6" width="171" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="EyW-y0-ONF"/>
                                             </constraints>
                                             <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                         </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="KaC-Qb-sih" firstAttribute="leading" secondItem="TVQ-bu-jrp" secondAttribute="leadingMargin" constant="16" id="UEp-32-qQ3"/>
+                                        <constraint firstItem="KaC-Qb-sih" firstAttribute="leading" secondItem="TVQ-bu-jrp" secondAttribute="leadingMargin" id="UEp-32-qQ3"/>
                                         <constraint firstItem="KaC-Qb-sih" firstAttribute="centerY" secondItem="TVQ-bu-jrp" secondAttribute="centerY" id="ZZy-53-ClC"/>
                                         <constraint firstItem="bpf-ci-J26" firstAttribute="leading" secondItem="KaC-Qb-sih" secondAttribute="trailing" constant="16" id="cxs-sD-3ZQ"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="bpf-ci-J26" secondAttribute="trailing" constant="16" id="oMY-n0-ka6"/>
@@ -65,18 +65,20 @@
                         <connections>
                             <outlet property="dataSource" destination="KmG-rn-1SP" id="huz-PK-XPc"/>
                             <outlet property="delegate" destination="KmG-rn-1SP" id="sQj-ed-psQ"/>
-                            <outletCollection property="gestureRecognizers" destination="i7t-Y9-Vf7" appends="YES" id="8t0-4l-ycb"/>
+                            <outletCollection property="gestureRecognizers" destination="MYn-X4-okn" appends="YES" id="vIc-D3-gJI"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="店舗検索" id="Uoa-ta-Yha"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="PushShopList" id="e4J-DU-qk6"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="PushShopListFromHere" id="tMI-sl-epF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tST-Ip-mu6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="i7t-Y9-Vf7">
+                <tapGestureRecognizer id="MYn-X4-okn">
                     <connections>
-                        <action selector="onTap:" destination="KmG-rn-1SP" id="0sH-WN-Wef"/>
+                        <action selector="onTap:" destination="KmG-rn-1SP" id="LIt-FB-a7g"/>
+                        <outlet property="delegate" destination="KmG-rn-1SP" id="2ee-a0-i8U"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -495,6 +497,7 @@
                             <constraint firstItem="158-2f-fAF" firstAttribute="top" secondItem="bp0-zt-1Ea" secondAttribute="topMargin" constant="64" id="sjz-0R-zrg"/>
                             <constraint firstItem="158-2f-fAF" firstAttribute="centerY" secondItem="bp0-zt-1Ea" secondAttribute="centerY" id="zPF-HH-d72"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="g9i-t8-CL1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="9gp-su-HIf">
                         <barButtonItem key="rightBarButtonItem" title="現在地を表示" id="Jh7-fT-x3G">
