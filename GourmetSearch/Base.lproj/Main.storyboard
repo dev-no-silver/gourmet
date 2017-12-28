@@ -460,6 +460,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AAr-Pg-o3L"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Bhv-i5-ogd">
+                        <barButtonItem key="rightBarButtonItem" title="写真を追加" id="8BA-m7-HKk">
+                            <connections>
+                                <action selector="addPhotoTapped:" destination="Wlc-MN-PBp" id="nsk-2D-ZNp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="address" destination="xRm-hj-woB" id="rGM-Gw-TIb"/>
                         <outlet property="addressContainerHeight" destination="yae-dT-p7v" id="K35-EE-Woe"/>
