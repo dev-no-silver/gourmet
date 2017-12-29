@@ -12,6 +12,8 @@ class PhotoListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
+    var gid: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -35,18 +37,30 @@ extension PhotoListViewController: UICollectionViewDelegate, UICollectionViewDat
 
     // MARK: - UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return ShopPhoto.sharedInstance.gids.count
+        if self.gid == nil {
+            return ShopPhoto.sharedInstance.gids.count
+        }
+
+        return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ShopPhoto.sharedInstance.numberOfPhotos(in: section)
+        if self.gid == nil {
+            return ShopPhoto.sharedInstance.numberOfPhotos(in: section)
+        }
+
+        return ShopPhoto.sharedInstance.count(gid: gid!)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoListItem", for: indexPath) as! PhotoListItemCollectionViewCell
 
-        let gid = ShopPhoto.sharedInstance.gids[indexPath.section]
-        cell.photo.image = ShopPhoto.sharedInstance.image(gid: gid, index: indexPath.row)
+        if self.gid == nil {
+            let gid = ShopPhoto.sharedInstance.gids[indexPath.section]
+            cell.photo.image = ShopPhoto.sharedInstance.image(gid: gid, index: indexPath.row)
+        } else {
+            cell.photo.image = ShopPhoto.sharedInstance.image(gid: self.gid!, index: indexPath.row)
+        }
 
         return cell
     }
@@ -59,8 +73,12 @@ extension PhotoListViewController: UICollectionViewDelegate, UICollectionViewDat
                 for: indexPath
             ) as! PhotoListItemCollectionViewHeader
 
-            let gid = ShopPhoto.sharedInstance.gids[indexPath.section]
-            header.title.text = ShopPhoto.sharedInstance.names[gid]
+            if self.gid == nil {
+                let gid = ShopPhoto.sharedInstance.gids[indexPath.section]
+                header.title.text = ShopPhoto.sharedInstance.names[gid]
+            } else {
+                header.title.text = ShopPhoto.sharedInstance.names[self.gid!]
+            }
 
             return header
         }

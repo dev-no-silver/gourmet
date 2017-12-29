@@ -21,7 +21,8 @@ class ShopDetailViewController: UIViewController {
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var favoriteIcon: UIImageView!
     @IBOutlet weak var favoriteLabel: UILabel!
-    
+    @IBOutlet weak var photoListContainer: UIView!
+
     var shop = Shop()
 
     let ipc = UIImagePickerController()
@@ -36,6 +37,7 @@ class ShopDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.scrollView.delegate = self
+        self.setup()
         super.viewWillAppear(animated)
     }
     
@@ -83,6 +85,10 @@ class ShopDetailViewController: UIViewController {
         self.setupMapKit()
 
         updateFavoriteButton()
+    }
+
+    fileprivate func setup() {
+        self.photoListContainer.isHidden =  !ShopPhoto.sharedInstance.hasPhotos(shop.gid!)
     }
     
     fileprivate func setupMapKit() {
@@ -142,11 +148,19 @@ class ShopDetailViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
+    @IBAction func photoListTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "PushPhotoListFromShopDetail", sender: nil)
+    }
+
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PushMapDetail" {
             let vc = segue.destination as! ShopMapDetailViewController
             vc.shop = self.shop
+        }
+        if segue.identifier == "PushPhotoListFromShopDetail" {
+            let vc = segue.destination as! PhotoListViewController
+            vc.gid = shop.gid
         }
     }
 }
