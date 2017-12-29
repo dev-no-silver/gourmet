@@ -224,8 +224,6 @@ public class YahooLocalSearch {
                         shop.station = "\(line)"
                     }
                 }
-                
-                print(shop)
 
                 self.shops.append(shop)
             }
