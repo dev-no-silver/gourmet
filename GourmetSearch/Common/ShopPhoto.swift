@@ -120,4 +120,12 @@ public class ShopPhoto {
         }
         return 0
     }
+
+    public func hasPhotos(_ gid: String) -> Bool {
+        if self.count(gid: gid) == 0 {
+            return false
+        } else {
+            return true
+        }
+    }
 }
