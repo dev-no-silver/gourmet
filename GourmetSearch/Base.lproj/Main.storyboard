@@ -125,51 +125,51 @@
                         <viewControllerLayoutGuide type="top" id="UJl-yV-Lmm"/>
                         <viewControllerLayoutGuide type="bottom" id="IHS-Vy-qQS"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BaG-iS-NWo">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BaG-iS-NWo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kU5-76-VwJ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="2hp-4j-aXb">
                                     <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoListItem" id="W5T-SJ-24H" customClass="PhotoListItemCollectionViewCell" customModule="GourmetSearch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="50" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gUR-7h-3aF">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Br5-t1-1Wm">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="gUR-7h-3aF" secondAttribute="bottom" id="7Nf-wn-xgb"/>
-                                            <constraint firstAttribute="trailing" secondItem="gUR-7h-3aF" secondAttribute="trailing" id="Nq8-Tj-ptf"/>
-                                            <constraint firstItem="gUR-7h-3aF" firstAttribute="leading" secondItem="W5T-SJ-24H" secondAttribute="leading" id="c8G-i3-0l6"/>
-                                            <constraint firstItem="gUR-7h-3aF" firstAttribute="top" secondItem="W5T-SJ-24H" secondAttribute="top" id="hRN-tg-y74"/>
+                                            <constraint firstItem="Br5-t1-1Wm" firstAttribute="leading" secondItem="W5T-SJ-24H" secondAttribute="leading" id="CyW-6P-s5D"/>
+                                            <constraint firstAttribute="bottom" secondItem="Br5-t1-1Wm" secondAttribute="bottom" id="Eg0-1S-khq"/>
+                                            <constraint firstItem="Br5-t1-1Wm" firstAttribute="top" secondItem="W5T-SJ-24H" secondAttribute="top" id="ILD-O5-YyF"/>
+                                            <constraint firstAttribute="trailing" secondItem="Br5-t1-1Wm" secondAttribute="trailing" id="Jjs-gs-u4F"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="photo" destination="gUR-7h-3aF" id="Yrb-Fz-J9g"/>
+                                            <outlet property="photo" destination="Br5-t1-1Wm" id="V12-JK-ZMP"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoListHeader" id="8qe-YJ-1JC" customClass="PhotoListItemCollectionViewHeader" customModule="GourmetSearch" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoListHeader" id="8qe-YJ-1JC" customClass="PhotoListItemCollectionViewHeader" customModule="GourmetSearch" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2Y-Dz-rIu">
-                                            <rect key="frame" x="8" y="14.5" width="359" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uuz-nZ-T4P">
+                                            <rect key="frame" x="8" y="15" width="359" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="q37-hP-PmT"/>
+                                                <constraint firstAttribute="height" constant="21" id="Ete-rH-0Zw"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -177,12 +177,12 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="L2Y-Dz-rIu" secondAttribute="trailing" constant="8" id="ZAd-lE-wv7"/>
-                                        <constraint firstItem="L2Y-Dz-rIu" firstAttribute="centerY" secondItem="8qe-YJ-1JC" secondAttribute="centerY" id="fBr-lq-k64"/>
-                                        <constraint firstItem="L2Y-Dz-rIu" firstAttribute="leading" secondItem="8qe-YJ-1JC" secondAttribute="leading" constant="8" id="g6y-ll-AZ7"/>
+                                        <constraint firstItem="Uuz-nZ-T4P" firstAttribute="centerY" secondItem="8qe-YJ-1JC" secondAttribute="centerY" id="IM6-Ok-Sp6"/>
+                                        <constraint firstItem="Uuz-nZ-T4P" firstAttribute="leading" secondItem="8qe-YJ-1JC" secondAttribute="leading" constant="8" id="XhK-nR-3Bf"/>
+                                        <constraint firstAttribute="trailing" secondItem="Uuz-nZ-T4P" secondAttribute="trailing" constant="8" id="z6C-ue-6Jz"/>
                                     </constraints>
                                     <connections>
-                                        <outlet property="title" destination="L2Y-Dz-rIu" id="S6g-z5-K7h"/>
+                                        <outlet property="title" destination="Uuz-nZ-T4P" id="fmy-WL-tLE"/>
                                     </connections>
                                 </collectionReusableView>
                                 <connections>
@@ -193,10 +193,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="kU5-76-VwJ" secondAttribute="bottom" id="5Sd-zY-zrk"/>
                             <constraint firstItem="kU5-76-VwJ" firstAttribute="leading" secondItem="BaG-iS-NWo" secondAttribute="leading" id="PlO-YE-Z1j"/>
-                            <constraint firstItem="kU5-76-VwJ" firstAttribute="top" secondItem="UJl-yV-Lmm" secondAttribute="bottom" id="gD1-Id-bsW"/>
+                            <constraint firstItem="kU5-76-VwJ" firstAttribute="top" secondItem="BaG-iS-NWo" secondAttribute="top" id="ZyK-hU-I3a"/>
                             <constraint firstAttribute="trailing" secondItem="kU5-76-VwJ" secondAttribute="trailing" id="oOZ-tE-H4h"/>
-                            <constraint firstItem="IHS-Vy-qQS" firstAttribute="top" secondItem="kU5-76-VwJ" secondAttribute="bottom" id="zhu-vt-DNx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="写真一覧" id="nlG-Qr-sUW"/>

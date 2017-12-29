@@ -29,7 +29,7 @@ extension PhotoListViewController: UICollectionViewDelegate, UICollectionViewDat
 
     // MARK: - UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = self.view.frame.width / 3
+        let size = self.view.frame.size.width / 3
         return CGSize(width: size, height: size)
     }
 
