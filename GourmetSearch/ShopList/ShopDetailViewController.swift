@@ -168,6 +168,10 @@ extension ShopDetailViewController: UIImagePickerControllerDelegate, UINavigatio
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            ShopPhoto.sharedInstance.append(shop: shop, image: image)
+        }
+
         ipc.dismiss(animated: true, completion: nil)
     }
 
