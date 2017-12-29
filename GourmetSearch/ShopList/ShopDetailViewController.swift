@@ -24,9 +24,14 @@ class ShopDetailViewController: UIViewController {
     
     var shop = Shop()
 
+    let ipc = UIImagePickerController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configure()
+
+        self.ipc.delegate = self
+        self.ipc.allowsEditing = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -111,6 +116,32 @@ class ShopDetailViewController: UIViewController {
         updateFavoriteButton()
     }
     
+    @IBAction func addPhotoTapped(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            alert.addAction(UIAlertAction(
+                title: "写真を撮る",
+                style: .default,
+                handler: { action in
+                    self.ipc.sourceType = .camera
+                    self.present(self.ipc, animated: true, completion: nil)
+            }))
+        }
+
+        alert.addAction(UIAlertAction(
+            title: "写真を選択",
+            style: .default,
+            handler: { action in
+                self.ipc.sourceType = .photoLibrary
+                self.present(self.ipc, animated: true, completion: nil)
+        }))
+
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: { action in }))
+
+        self.present(alert, animated: true, completion: nil)
+    }
+
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PushMapDetail" {
@@ -129,4 +160,19 @@ extension ShopDetailViewController: UIScrollViewDelegate {
         }
         
     }
+}
+
+extension ShopDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        ipc.dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            ShopPhoto.sharedInstance.append(shop: shop, image: image)
+        }
+
+        ipc.dismiss(animated: true, completion: nil)
+    }
+
 }
