@@ -108,7 +108,27 @@ class ShopDetailViewController: UIViewController {
     
     // MARK: - IBAction
     @IBAction func telTapped(_ sender: UIButton) {
-        print("telTapped")
+        guard let tel = shop.tel else { return }
+        guard let url = URL(string: "tel:\(tel)") else { return }
+
+        if !UIApplication.shared.canOpenURL(url) {
+            let alert = UIAlertController(title: "電話をかけることができません", message: "この端末には電話機能が搭載されていません", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+
+        guard let name = shop.name else { return }
+        let alert = UIAlertController(title: "電話", message: "\(name)に電話をかけます", preferredStyle: .alert)
+        alert.addAction(
+            UIAlertAction(title: "電話をかける", style: .destructive, handler: { action in
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                return
+            })
+        )
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func addressTapped(_ sender: UIButton) {
