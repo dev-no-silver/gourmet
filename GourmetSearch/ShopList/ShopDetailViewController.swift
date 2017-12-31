@@ -22,6 +22,7 @@ class ShopDetailViewController: UIViewController {
     @IBOutlet weak var favoriteIcon: UIImageView!
     @IBOutlet weak var favoriteLabel: UILabel!
     @IBOutlet weak var photoListContainer: UIView!
+    @IBOutlet weak var line: UIButton!
 
     var shop = Shop()
 
@@ -33,6 +34,10 @@ class ShopDetailViewController: UIViewController {
 
         self.ipc.delegate = self
         self.ipc.allowsEditing = true
+
+        if UIApplication.shared.canOpenURL(URL(string: "line://")!) {
+            self.line.isEnabled = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -170,6 +175,24 @@ class ShopDetailViewController: UIViewController {
 
     @IBAction func photoListTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "PushPhotoListFromShopDetail", sender: nil)
+    }
+
+    @IBAction func lineTapped(_ sender: UIButton) {
+        var message = ""
+
+        if let name = shop.name {
+            message += name + "\n"
+        }
+
+        if let url = shop.url {
+            message += url + "\n"
+        }
+
+        if let encoded = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            if let uri = URL(string: "line://msg/text/" + encoded) {
+                UIApplication.shared.open(uri, options: [:], completionHandler: nil)
+            }
+        }
     }
 
     // MARK: - Navigation
