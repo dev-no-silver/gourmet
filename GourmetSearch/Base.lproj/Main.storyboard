@@ -202,11 +202,61 @@
                     <navigationItem key="navigationItem" title="写真一覧" id="nlG-Qr-sUW"/>
                     <connections>
                         <outlet property="collectionView" destination="kU5-76-VwJ" id="le7-KE-dY1"/>
+                        <segue destination="h5b-up-xHs" kind="show" identifier="PushPhotoDetail" id="Lyi-uy-0pr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FKX-G1-vs2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-794" y="1337"/>
+        </scene>
+        <!--Photo Viewer-->
+        <scene sceneID="IJ5-tq-Xso">
+            <objects>
+                <viewController id="h5b-up-xHs" userLabel="Photo Viewer" customClass="PhotoDetailViewController" customModule="GourmetSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aDJ-vB-shZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="dMG-Sq-g1t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m7s-LP-I44">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0c-ls-xLb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdq-YC-fs9">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Cdq-YC-fs9" firstAttribute="leading" secondItem="f0c-ls-xLb" secondAttribute="leading" id="BTk-yT-nec"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cdq-YC-fs9" secondAttribute="trailing" id="Stc-BQ-3qt"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cdq-YC-fs9" secondAttribute="bottom" id="ZM2-wV-UKl"/>
+                                    <constraint firstItem="Cdq-YC-fs9" firstAttribute="top" secondItem="f0c-ls-xLb" secondAttribute="top" id="jpJ-XN-snV"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="h5b-up-xHs" id="t60-k9-Q45"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f0c-ls-xLb" firstAttribute="top" secondItem="aDJ-vB-shZ" secondAttribute="bottom" id="BQS-pV-u6v"/>
+                            <constraint firstItem="dMG-Sq-g1t" firstAttribute="top" secondItem="f0c-ls-xLb" secondAttribute="bottom" id="Gqw-yk-mDU"/>
+                            <constraint firstAttribute="trailing" secondItem="f0c-ls-xLb" secondAttribute="trailing" id="T8J-bh-EeW"/>
+                            <constraint firstItem="Cdq-YC-fs9" firstAttribute="width" secondItem="m7s-LP-I44" secondAttribute="width" id="Uxv-BN-boT"/>
+                            <constraint firstItem="Cdq-YC-fs9" firstAttribute="height" secondItem="m7s-LP-I44" secondAttribute="height" id="V7K-YN-7pi"/>
+                            <constraint firstItem="f0c-ls-xLb" firstAttribute="leading" secondItem="m7s-LP-I44" secondAttribute="leading" id="nQp-F8-SxU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photo" destination="Cdq-YC-fs9" id="jTE-1p-7S4"/>
+                        <outlet property="scrollView" destination="f0c-ls-xLb" id="V8S-66-bN5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cGO-XX-464" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="1336"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hgM-yb-Yai">

@@ -85,4 +85,29 @@ extension PhotoListViewController: UICollectionViewDelegate, UICollectionViewDat
 
         return UICollectionReusableView()
     }
+
+    // MARK: - UICollectionViewDelegate
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "PushPhotoDetail", sender: indexPath)
+    }
+}
+
+extension PhotoListViewController {
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PushPhotoDetail" {
+            let vc = segue.destination as! PhotoDetailViewController
+
+            if let indexPath = sender as? IndexPath {
+                if self.gid == nil {
+                    let gid = ShopPhoto.sharedInstance.gids[indexPath.section]
+                    let image = ShopPhoto.sharedInstance.image(gid: gid, index: indexPath.row)
+                    vc.image = image
+                } else {
+                    let image = ShopPhoto.sharedInstance.image(gid: gid!, index: indexPath.row)
+                    vc.image = image
+                }
+            }
+        }
+    }
 }
