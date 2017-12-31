@@ -736,6 +736,7 @@
                         <outlet property="nameHeight" destination="Gss-4M-4aV" id="3a4-HU-qCg"/>
                         <outlet property="photo" destination="VL5-Pt-ala" id="42C-yW-knT"/>
                         <outlet property="photoListContainer" destination="SIH-7J-fcz" id="kz4-VX-RDS"/>
+                        <outlet property="photoListContainerHeight" destination="tuc-Pw-qIH" id="ac7-wm-vIi"/>
                         <outlet property="scrollView" destination="MXc-JS-beU" id="kPC-eR-Oaz"/>
                         <outlet property="tel" destination="5UQ-1P-Y3A" id="zX7-XK-W6Q"/>
                         <outlet property="twitter" destination="j8z-Gx-neS" id="M9p-I8-2hr"/>

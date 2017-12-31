@@ -23,6 +23,7 @@ class ShopDetailViewController: UIViewController {
     @IBOutlet weak var favoriteIcon: UIImageView!
     @IBOutlet weak var favoriteLabel: UILabel!
     @IBOutlet weak var photoListContainer: UIView!
+    @IBOutlet weak var photoListContainerHeight: NSLayoutConstraint!
     @IBOutlet weak var line: UIButton!
     @IBOutlet weak var twitter: UIButton!
     @IBOutlet weak var facebook: UIButton!
@@ -114,7 +115,13 @@ class ShopDetailViewController: UIViewController {
     }
 
     fileprivate func setup() {
-        self.photoListContainer.isHidden =  !ShopPhoto.sharedInstance.hasPhotos(shop.gid!)
+        if ShopPhoto.sharedInstance.hasPhotos(shop.gid!) {
+            self.photoListContainer.isHidden = false
+            self.photoListContainerHeight.constant = 44
+        } else {
+            self.photoListContainer.isHidden = true
+            self.photoListContainerHeight.constant = 0
+        }
     }
 
     fileprivate func setupSocialButton() {
