@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Social
 
 class ShopDetailViewController: UIViewController {
 
@@ -23,6 +24,8 @@ class ShopDetailViewController: UIViewController {
     @IBOutlet weak var favoriteLabel: UILabel!
     @IBOutlet weak var photoListContainer: UIView!
     @IBOutlet weak var line: UIButton!
+    @IBOutlet weak var twitter: UIButton!
+    @IBOutlet weak var facebook: UIButton!
 
     var shop = Shop()
 
@@ -35,9 +38,7 @@ class ShopDetailViewController: UIViewController {
         self.ipc.delegate = self
         self.ipc.allowsEditing = true
 
-        if UIApplication.shared.canOpenURL(URL(string: "line://")!) {
-            self.line.isEnabled = true
-        }
+        self.setupSocialButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +76,26 @@ class ShopDetailViewController: UIViewController {
             favoriteLabel.text = "お気に入りに入れる"
         }
     }
+
+    func share(type: String) {
+        guard let vc = SLComposeViewController(forServiceType: type) else { return }
+
+        if let name = shop.name {
+            vc.setInitialText(name + "\n")
+        }
+
+        if let gid = shop.gid {
+            if ShopPhoto.sharedInstance.count(gid: gid) > 0 {
+                vc.add(ShopPhoto.sharedInstance.image(gid: gid, index: 0))
+            }
+        }
+
+        if let url = shop.url {
+            vc.add(URL(string: url))
+        }
+
+        self.present(vc, animated: true, completion: nil)
+    }
     
     fileprivate func configure() {
         if let url = shop.photoUrl {
@@ -94,6 +115,20 @@ class ShopDetailViewController: UIViewController {
 
     fileprivate func setup() {
         self.photoListContainer.isHidden =  !ShopPhoto.sharedInstance.hasPhotos(shop.gid!)
+    }
+
+    fileprivate func setupSocialButton() {
+        if UIApplication.shared.canOpenURL(URL(string: "line://")!) {
+            self.line.isEnabled = true
+        }
+
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+            self.twitter.isEnabled = true
+        }
+
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
+            self.facebook.isEnabled = true
+        }
     }
     
     fileprivate func setupMapKit() {
@@ -193,6 +228,14 @@ class ShopDetailViewController: UIViewController {
                 UIApplication.shared.open(uri, options: [:], completionHandler: nil)
             }
         }
+    }
+
+    @IBAction func twitterTapped(_ sender: UIButton) {
+        self.share(type: SLServiceTypeTwitter)
+    }
+
+    @IBAction func facebookTapped(_ sender: UIButton) {
+        self.share(type: SLServiceTypeFacebook)
     }
 
     // MARK: - Navigation
