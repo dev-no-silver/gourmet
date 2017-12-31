@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Social
 
 class ShopDetailViewController: UIViewController {
 
@@ -22,6 +23,10 @@ class ShopDetailViewController: UIViewController {
     @IBOutlet weak var favoriteIcon: UIImageView!
     @IBOutlet weak var favoriteLabel: UILabel!
     @IBOutlet weak var photoListContainer: UIView!
+    @IBOutlet weak var photoListContainerHeight: NSLayoutConstraint!
+    @IBOutlet weak var line: UIButton!
+    @IBOutlet weak var twitter: UIButton!
+    @IBOutlet weak var facebook: UIButton!
 
     var shop = Shop()
 
@@ -33,6 +38,8 @@ class ShopDetailViewController: UIViewController {
 
         self.ipc.delegate = self
         self.ipc.allowsEditing = true
+
+        self.setupSocialButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,6 +77,26 @@ class ShopDetailViewController: UIViewController {
             favoriteLabel.text = "お気に入りに入れる"
         }
     }
+
+    func share(type: String) {
+        guard let vc = SLComposeViewController(forServiceType: type) else { return }
+
+        if let name = shop.name {
+            vc.setInitialText(name + "\n")
+        }
+
+        if let gid = shop.gid {
+            if ShopPhoto.sharedInstance.count(gid: gid) > 0 {
+                vc.add(ShopPhoto.sharedInstance.image(gid: gid, index: 0))
+            }
+        }
+
+        if let url = shop.url {
+            vc.add(URL(string: url))
+        }
+
+        self.present(vc, animated: true, completion: nil)
+    }
     
     fileprivate func configure() {
         if let url = shop.photoUrl {
@@ -88,7 +115,27 @@ class ShopDetailViewController: UIViewController {
     }
 
     fileprivate func setup() {
-        self.photoListContainer.isHidden =  !ShopPhoto.sharedInstance.hasPhotos(shop.gid!)
+        if ShopPhoto.sharedInstance.hasPhotos(shop.gid!) {
+            self.photoListContainer.isHidden = false
+            self.photoListContainerHeight.constant = 44
+        } else {
+            self.photoListContainer.isHidden = true
+            self.photoListContainerHeight.constant = 0
+        }
+    }
+
+    fileprivate func setupSocialButton() {
+        if UIApplication.shared.canOpenURL(URL(string: "line://")!) {
+            self.line.isEnabled = true
+        }
+
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+            self.twitter.isEnabled = true
+        }
+
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
+            self.facebook.isEnabled = true
+        }
     }
     
     fileprivate func setupMapKit() {
@@ -108,7 +155,27 @@ class ShopDetailViewController: UIViewController {
     
     // MARK: - IBAction
     @IBAction func telTapped(_ sender: UIButton) {
-        print("telTapped")
+        guard let tel = shop.tel else { return }
+        guard let url = URL(string: "tel:\(tel)") else { return }
+
+        if !UIApplication.shared.canOpenURL(url) {
+            let alert = UIAlertController(title: "電話をかけることができません", message: "この端末には電話機能が搭載されていません", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+
+        guard let name = shop.name else { return }
+        let alert = UIAlertController(title: "電話", message: "\(name)に電話をかけます", preferredStyle: .alert)
+        alert.addAction(
+            UIAlertAction(title: "電話をかける", style: .destructive, handler: { action in
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                return
+            })
+        )
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func addressTapped(_ sender: UIButton) {
@@ -150,6 +217,32 @@ class ShopDetailViewController: UIViewController {
 
     @IBAction func photoListTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "PushPhotoListFromShopDetail", sender: nil)
+    }
+
+    @IBAction func lineTapped(_ sender: UIButton) {
+        var message = ""
+
+        if let name = shop.name {
+            message += name + "\n"
+        }
+
+        if let url = shop.url {
+            message += url + "\n"
+        }
+
+        if let encoded = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            if let uri = URL(string: "line://msg/text/" + encoded) {
+                UIApplication.shared.open(uri, options: [:], completionHandler: nil)
+            }
+        }
+    }
+
+    @IBAction func twitterTapped(_ sender: UIButton) {
+        self.share(type: SLServiceTypeTwitter)
+    }
+
+    @IBAction func facebookTapped(_ sender: UIButton) {
+        self.share(type: SLServiceTypeFacebook)
     }
 
     // MARK: - Navigation

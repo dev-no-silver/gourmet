@@ -430,11 +430,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MXc-JS-beU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MXc-JS-beU">
+                                <rect key="frame" x="0.0" y="-300" width="375" height="900"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWR-jv-d02">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="681"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VL5-Pt-ala" userLabel="Photo">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
@@ -621,6 +621,54 @@
                                                     <constraint firstAttribute="height" constant="44" id="tuc-Pw-qIH"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFY-vf-cic" userLabel="シェアボタンコンテナ">
+                                                <rect key="frame" x="8" y="601" width="359" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2J-ne-ukU" userLabel="lineボタン">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="A2A-km-xYS"/>
+                                                            <constraint firstAttribute="height" constant="50" id="tP4-po-WXH"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="sns-line"/>
+                                                        <connections>
+                                                            <action selector="lineTapped:" destination="Wlc-MN-PBp" eventType="touchUpInside" id="ez0-UJ-TS5"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8z-Gx-neS" userLabel="twitterボタン">
+                                                        <rect key="frame" x="58" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="gXV-jw-S23"/>
+                                                            <constraint firstAttribute="height" constant="50" id="zDj-hK-04V"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="sns-twitter"/>
+                                                        <connections>
+                                                            <action selector="twitterTapped:" destination="Wlc-MN-PBp" eventType="touchUpInside" id="Vs2-7c-VIh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHr-xc-rRM" userLabel="facebookボタン">
+                                                        <rect key="frame" x="116" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="ICF-ZA-hVb"/>
+                                                            <constraint firstAttribute="height" constant="50" id="Qnh-zr-LB6"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="sns-facebook"/>
+                                                        <connections>
+                                                            <action selector="facebookTapped:" destination="Wlc-MN-PBp" eventType="touchUpInside" id="J4Z-Lp-a0R"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="j8z-Gx-neS" firstAttribute="leading" secondItem="H2J-ne-ukU" secondAttribute="trailing" constant="8" id="0tp-El-Y8h"/>
+                                                    <constraint firstItem="zHr-xc-rRM" firstAttribute="leading" secondItem="j8z-Gx-neS" secondAttribute="trailing" constant="8" id="3tE-gs-4iq"/>
+                                                    <constraint firstItem="H2J-ne-ukU" firstAttribute="centerY" secondItem="IFY-vf-cic" secondAttribute="centerY" id="H0z-x0-VOF"/>
+                                                    <constraint firstItem="H2J-ne-ukU" firstAttribute="leading" secondItem="IFY-vf-cic" secondAttribute="leading" id="KOB-jm-3L4"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Lfg-sI-WjK"/>
+                                                    <constraint firstItem="j8z-Gx-neS" firstAttribute="centerY" secondItem="IFY-vf-cic" secondAttribute="centerY" id="h8b-RR-ovV"/>
+                                                    <constraint firstItem="zHr-xc-rRM" firstAttribute="centerY" secondItem="IFY-vf-cic" secondAttribute="centerY" id="zG2-xo-OzT"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -633,16 +681,19 @@
                                             <constraint firstItem="VL5-Pt-ala" firstAttribute="top" secondItem="YWR-jv-d02" secondAttribute="top" id="90Q-OJ-ehz"/>
                                             <constraint firstItem="euj-Qt-Tdq" firstAttribute="leading" secondItem="YWR-jv-d02" secondAttribute="leadingMargin" constant="8" id="A0h-FW-u7T"/>
                                             <constraint firstItem="DAB-Uc-crp" firstAttribute="top" secondItem="xcq-aK-B3l" secondAttribute="bottom" id="BTw-eS-4C8"/>
+                                            <constraint firstAttribute="trailing" secondItem="IFY-vf-cic" secondAttribute="trailing" constant="8" id="Epb-G4-p4H"/>
                                             <constraint firstItem="tYb-KY-vnS" firstAttribute="leading" secondItem="YWR-jv-d02" secondAttribute="leadingMargin" id="GJ0-fI-hPD"/>
                                             <constraint firstItem="tYb-KY-vnS" firstAttribute="top" secondItem="Lwa-gH-NeU" secondAttribute="bottom" constant="12" id="Ihv-nG-e0f"/>
                                             <constraint firstItem="Lwa-gH-NeU" firstAttribute="top" secondItem="DAB-Uc-crp" secondAttribute="bottom" constant="10" id="KYG-kN-OfX"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="xcq-aK-B3l" secondAttribute="trailing" id="NCZ-R3-htH"/>
-                                            <constraint firstAttribute="height" constant="1000" id="Qma-xd-QNa"/>
+                                            <constraint firstItem="IFY-vf-cic" firstAttribute="top" secondItem="SIH-7J-fcz" secondAttribute="bottom" constant="30" id="S99-JB-ujp"/>
                                             <constraint firstAttribute="trailing" secondItem="SIH-7J-fcz" secondAttribute="trailing" id="Ugm-dT-prZ"/>
                                             <constraint firstItem="xcq-aK-B3l" firstAttribute="leading" secondItem="YWR-jv-d02" secondAttribute="leadingMargin" id="V0G-UJ-CRA"/>
                                             <constraint firstItem="euj-Qt-Tdq" firstAttribute="top" secondItem="VL5-Pt-ala" secondAttribute="bottomMargin" constant="10" id="XgG-oT-fx5"/>
+                                            <constraint firstItem="IFY-vf-cic" firstAttribute="leading" secondItem="YWR-jv-d02" secondAttribute="leading" constant="8" id="bHc-TK-Sdk"/>
                                             <constraint firstItem="Lwa-gH-NeU" firstAttribute="leading" secondItem="YWR-jv-d02" secondAttribute="leadingMargin" id="bgY-9z-O8o"/>
                                             <constraint firstItem="xcq-aK-B3l" firstAttribute="top" secondItem="euj-Qt-Tdq" secondAttribute="bottomMargin" constant="8" id="fcv-xO-Dih"/>
+                                            <constraint firstAttribute="bottom" secondItem="IFY-vf-cic" secondAttribute="bottom" constant="30" id="i58-wQ-ceI"/>
                                             <constraint firstItem="DAB-Uc-crp" firstAttribute="leading" secondItem="YWR-jv-d02" secondAttribute="leading" id="sBf-Gr-1mY"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Lwa-gH-NeU" secondAttribute="trailing" id="to3-09-j6A"/>
                                             <constraint firstAttribute="trailing" secondItem="VL5-Pt-ala" secondAttribute="trailing" id="vdP-ib-r13"/>
@@ -676,15 +727,19 @@
                     <connections>
                         <outlet property="address" destination="xRm-hj-woB" id="rGM-Gw-TIb"/>
                         <outlet property="addressContainerHeight" destination="yae-dT-p7v" id="K35-EE-Woe"/>
+                        <outlet property="facebook" destination="zHr-xc-rRM" id="o6U-z3-Hbr"/>
                         <outlet property="favoriteIcon" destination="A3x-CP-L7T" id="aD3-c6-5Qb"/>
                         <outlet property="favoriteLabel" destination="EJI-Mb-GPK" id="YBs-cc-c36"/>
+                        <outlet property="line" destination="H2J-ne-ukU" id="902-mM-AA2"/>
                         <outlet property="map" destination="Lwa-gH-NeU" id="Mzn-v7-8gP"/>
                         <outlet property="name" destination="euj-Qt-Tdq" id="0DR-0m-4Ko"/>
                         <outlet property="nameHeight" destination="Gss-4M-4aV" id="3a4-HU-qCg"/>
                         <outlet property="photo" destination="VL5-Pt-ala" id="42C-yW-knT"/>
                         <outlet property="photoListContainer" destination="SIH-7J-fcz" id="kz4-VX-RDS"/>
+                        <outlet property="photoListContainerHeight" destination="tuc-Pw-qIH" id="ac7-wm-vIi"/>
                         <outlet property="scrollView" destination="MXc-JS-beU" id="kPC-eR-Oaz"/>
                         <outlet property="tel" destination="5UQ-1P-Y3A" id="zX7-XK-W6Q"/>
+                        <outlet property="twitter" destination="j8z-Gx-neS" id="M9p-I8-2hr"/>
                         <segue destination="r9g-Pc-aj3" kind="show" identifier="PushMapDetail" id="lz5-c6-ovH"/>
                         <segue destination="DqV-6G-Yxq" kind="show" identifier="PushPhotoListFromShopDetail" id="Hyc-8A-TPC"/>
                     </connections>
@@ -736,6 +791,9 @@
     </scenes>
     <resources>
         <image name="blank" width="1" height="1"/>
+        <image name="sns-facebook" width="50" height="50"/>
+        <image name="sns-line" width="80" height="80"/>
+        <image name="sns-twitter" width="200" height="200"/>
         <image name="star-on" width="40" height="40"/>
         <image name="tabbar-favorite" width="30" height="30"/>
         <image name="tabbar-photo" width="30" height="30"/>
