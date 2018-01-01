@@ -155,6 +155,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="XBE-ob-w43" kind="show" id="heu-9t-Yw6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -179,6 +182,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obi-9D-vCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="519" y="-335"/>
+        </scene>
+        <!--ライセンス-->
+        <scene sceneID="kg6-Yl-eqo">
+            <objects>
+                <viewController id="XBE-ob-w43" customClass="LicenseListViewController" customModule="GourmetSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FQN-i7-eDL"/>
+                        <viewControllerLayoutGuide type="bottom" id="U6b-Ro-N2P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FVv-iJ-tY3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b93-MV-qFg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Software" textLabel="nCH-v4-7wG" style="IBUITableViewCellStyleDefault" id="Hvj-Ml-Iku">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hvj-Ml-Iku" id="jvO-u0-FAa">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nCH-v4-7wG">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XBE-ob-w43" id="XAh-sg-akz"/>
+                                    <outlet property="delegate" destination="XBE-ob-w43" id="klA-2N-UuX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="b93-MV-qFg" secondAttribute="trailing" id="Xip-gU-8s6"/>
+                            <constraint firstAttribute="bottom" secondItem="b93-MV-qFg" secondAttribute="bottom" id="gIn-21-4kx"/>
+                            <constraint firstItem="b93-MV-qFg" firstAttribute="leading" secondItem="FVv-iJ-tY3" secondAttribute="leading" id="hgw-vr-im8"/>
+                            <constraint firstItem="b93-MV-qFg" firstAttribute="top" secondItem="FVv-iJ-tY3" secondAttribute="top" id="rZs-Ar-hC5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ライセンス" id="AaW-mx-8jv"/>
+                    <connections>
+                        <outlet property="tableView" destination="b93-MV-qFg" id="sPV-MC-0ob"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vxT-6O-LLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1327" y="-332"/>
         </scene>
         <!--お気に入り-->
         <scene sceneID="iPj-hl-dd3">
