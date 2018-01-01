@@ -234,11 +234,77 @@
                     <navigationItem key="navigationItem" title="ライセンス" id="AaW-mx-8jv"/>
                     <connections>
                         <outlet property="tableView" destination="b93-MV-qFg" id="sPV-MC-0ob"/>
+                        <segue destination="ThX-cI-Jds" kind="show" identifier="PushLicenseDetail" id="pIn-qQ-HPJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxT-6O-LLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1327" y="-332"/>
+        </scene>
+        <!--ライセンス詳細-->
+        <scene sceneID="FwG-u6-vby">
+            <objects>
+                <viewController id="ThX-cI-Jds" customClass="LicenseDetailViewController" customModule="GourmetSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SUP-CE-dzB"/>
+                        <viewControllerLayoutGuide type="bottom" id="qOo-jS-mtS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gx7-zT-vlW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WrW-Lm-5GU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8v-JI-04I">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="316"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xze-cm-89F">
+                                                <rect key="frame" x="8" y="8" width="359" height="300"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="pf7-bm-y9j"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="xze-cm-89F" secondAttribute="bottom" constant="8" id="7zq-gY-0Ay"/>
+                                            <constraint firstAttribute="trailing" secondItem="xze-cm-89F" secondAttribute="trailing" constant="8" id="Wqr-Bk-JY0"/>
+                                            <constraint firstItem="xze-cm-89F" firstAttribute="top" secondItem="x8v-JI-04I" secondAttribute="top" constant="8" id="cfM-Af-uFi"/>
+                                            <constraint firstItem="xze-cm-89F" firstAttribute="leading" secondItem="x8v-JI-04I" secondAttribute="leading" constant="8" id="gte-ZO-IQZ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="x8v-JI-04I" secondAttribute="bottom" id="5L5-dL-y2L"/>
+                                    <constraint firstItem="x8v-JI-04I" firstAttribute="top" secondItem="WrW-Lm-5GU" secondAttribute="top" id="7ij-m6-20S"/>
+                                    <constraint firstAttribute="trailing" secondItem="x8v-JI-04I" secondAttribute="trailing" id="j2e-XR-aGu"/>
+                                    <constraint firstItem="x8v-JI-04I" firstAttribute="leading" secondItem="WrW-Lm-5GU" secondAttribute="leading" id="tT3-wY-O8a"/>
+                                </constraints>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="64" maxX="0.0" maxY="0.0"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WrW-Lm-5GU" firstAttribute="top" secondItem="gx7-zT-vlW" secondAttribute="top" id="8i0-4y-oHh"/>
+                            <constraint firstItem="x8v-JI-04I" firstAttribute="width" secondItem="gx7-zT-vlW" secondAttribute="width" id="Gwz-es-stS"/>
+                            <constraint firstAttribute="trailing" secondItem="WrW-Lm-5GU" secondAttribute="trailing" id="NFY-MD-NTZ"/>
+                            <constraint firstItem="WrW-Lm-5GU" firstAttribute="leading" secondItem="gx7-zT-vlW" secondAttribute="leading" id="lM3-DC-xAQ"/>
+                            <constraint firstAttribute="bottom" secondItem="WrW-Lm-5GU" secondAttribute="bottom" id="tji-Bd-2Sm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ライセンス詳細" id="uIk-Fg-OE3"/>
+                    <connections>
+                        <outlet property="text" destination="xze-cm-89F" id="ENw-4S-aHf"/>
+                        <outlet property="textHeight" destination="pf7-bm-y9j" id="o8E-BB-i35"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GX5-SA-42R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2324" y="-332"/>
         </scene>
         <!--お気に入り-->
         <scene sceneID="iPj-hl-dd3">

@@ -38,12 +38,24 @@ class LicenseListViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PushLicenseDetail" {
+            let vc = segue.destination as! LicenseDetailViewController
+            if let indexPath = sender as? NSIndexPath {
+                vc.name = self.softwares[indexPath.row].name
+                vc.license = self.softwares[indexPath.row].license
+            }
+        }
+    }
 }
 
 extension LicenseListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        performSegue(withIdentifier: "PushLicenseDetail", sender: indexPath)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
